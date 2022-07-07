@@ -21,11 +21,11 @@ class Loader extends PluginBase implements Listener{
   public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
       if($cmd->getName() == "lp"){
           if($sender instanceof Player){
-              $sender->teleport(new Position($this->data->get($sender->getName().".x"), $this->data->get($sender->getName().".y"), $this->data->get($sender->getName().".z"), $this->data->get($sender->getName().".world")));
-              $this->data->remove($player->getName().".x");
-              $this->data->remove($player->getName().".y");
-              $this->data->remove($player->getName().".z");
-              $this->data->remove($player->getName().".world");
+              $sender->teleport(new Position($this->data->get($sender->getName().".x"), $this->data->get($sender->getName().".y"), $this->data->get($sender->getName().".z"), $this->getServer()->getWorldManager()->getWorldByName($this->data->get($sender->getName().".world"))));
+              $this->data->remove($sender->getName().".x");
+              $this->data->remove($sender->getName().".y");
+              $this->data->remove($sender->getName().".z");
+              $this->data->remove($sender->getName().".world");
           } else {
               $sender->sendMessage("You must be player!");
           }
