@@ -34,7 +34,7 @@ class Loader extends PluginBase implements Listener{
   }
   
   public function onQuit(PlayerQuitEvent $ev){
-      $p = $ev->getPlayer();
+      $player = $ev->getPlayer();
       $this->data->set($player->getName().".x", floor($player->getPosition()->x));
       $this->data->set($player->getName().".y", floor($player->getPosition()->y));
       $this->data->set($player->getName().".z", floor($player->getPosition()->z));
