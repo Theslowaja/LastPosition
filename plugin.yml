@@ -1,0 +1,15 @@
+name: LastPosition
+author: Theslowaja
+main: Theslowaja\LastPosition\Loader
+version: 1.0.0
+api: 4.0.0
+
+commands: 
+  lp:
+    description: Teleport to your last position
+    permission: lastposition.teleport
+    
+permissions:
+  lastposition.teleport:
+    default: true
+    description: lastposition permissions
