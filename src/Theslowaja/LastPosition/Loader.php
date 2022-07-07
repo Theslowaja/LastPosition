@@ -13,6 +13,8 @@ use pocketmine\utils\Config;
 
 class Loader extends PluginBase implements Listener{
  
+   private Config $data;
+ 
    public function onEnable():void{
        $this->getServer()->getPluginManager()->registerEvents($this, $this);
        $this->data = new Config($this->getDataFolder() . "data.yml", Config::YAML);
