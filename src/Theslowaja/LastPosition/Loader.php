@@ -22,10 +22,6 @@ class Loader extends PluginBase implements Listener{
       if($cmd->getName() == "lp"){
           if($sender instanceof Player){
               $sender->teleport(new Position($this->data->get($sender->getName().".x"), $this->data->get($sender->getName().".y"), $this->data->get($sender->getName().".z"), $this->getServer()->getWorldManager()->getWorldByName($this->data->get($sender->getName().".world"))));
-              $this->data->remove($sender->getName().".x");
-              $this->data->remove($sender->getName().".y");
-              $this->data->remove($sender->getName().".z");
-              $this->data->remove($sender->getName().".world");
           } else {
               $sender->sendMessage("You must be player!");
           }
